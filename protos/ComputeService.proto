@@ -1,0 +1,19 @@
+syntax = "proto3";
+import "google/api/annotations.proto";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+
+
+
+service ComputeService{
+    rpc areaOfRectangle(areaOfRectangleRequest) returns (areaOfRectangleResponse){
+    }
+}
+
+message areaOfRectangleRequest {
+    int32 x = 1;
+    int32 y = 2;
+}
+message areaOfRectangleResponse {
+    int32 z = 1;
+}
