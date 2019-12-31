@@ -1,6 +1,6 @@
 import time
 import grpc
-from src.rpc.ComputeService_pb2_grpc import add_ComputeServiceServicer_to_server, ComputeServiceServicer
+from src.ComputeService_pb2_grpc import add_ComputeServiceServicer_to_server, ComputeServiceServicer
 from concurrent import futures
 
 

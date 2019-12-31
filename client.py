@@ -1,6 +1,6 @@
 import grpc
-from src.rpc.ComputeService_pb2_grpc import ComputeServiceStub
-from src.protoc.ComputeService_pb2 import areaOfRectangleRequest
+from src.ComputeService_pb2_grpc import ComputeServiceStub
+from src.ComputeService_pb2 import areaOfRectangleRequest
 
 
 def run():

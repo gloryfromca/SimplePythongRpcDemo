@@ -1,14 +1,14 @@
 # Simple Python gRpc Demo      
 
-### how to generated target code
+### Build
+
+#### generate target code
 ``` bin     
-protoc -I. -I.. -I/usr/local/include --python_out=../src/protoc --grpc_python_out=../src/rpc 
---plugin=protoc-gen-grpc_python=/home/zh/grpc/bins/opt/grpc_python_plugin ComputeService.proto
+protoc -I. -I/usr/local/include --python_out=../src --grpc_python_out=../src --plugin=protoc-gen-grpc_python=/home/zh/grpc/bins/opt/grpc_python_plugin ComputeService.proto
 ```
 
-`-I` options should include src code file and imported packages. for instance, `.` includes src code file: ComputeService.proto,
-`..` includes `google/api/..` which are packages copied into this project, `/usr/local/include` includes `google/protobuf/..` which
-are installed when installing `protoc`.      
+`-I` options should include src code file and imported packages. for instance, `.` includes src code file: ComputeService.proto and `google/api/..` which are packages copied into this project, 
+`/usr/local/include` includes `google/protobuf/..` which are installed when installing `protoc`.      
 
 `python_out` option is path of result that protobuffer definition is translated to python.        
 
@@ -18,6 +18,12 @@ are installed when installing `protoc`.
 generating gRpc code of python version.     
 
 `ComputeService.proto` is protobuffer code file which defines `message` and `service`.    
+
+#### build official proto file    
+``` bin    
+protoc -I. -I/usr/local/include --python_out=../src  google/api/annotations.proto
+```    
+`google/api` in `src` don't be used in demo code.
 
 ### Installation    
 `grpcio-tools`     
@@ -39,6 +45,6 @@ official repository: `https://github.com/grpc/grpc.git`
 
 
 ### Reference      
-https://github.com/grpc/grpc/issues/15675
+https://github.com/grpc/grpc/issues/15675      
 https://stackoverflow.com/questions/46131022/protocol-buffer-import-resolution/49537333
 
