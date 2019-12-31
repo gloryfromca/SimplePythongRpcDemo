@@ -14,7 +14,7 @@ class ComputeServiceStub(object):
     Args:
       channel: A grpc.Channel.
     """
-    self.areaOfRectangle = channel.unary_unary(
+    self.areaOfRectangle = channel.stream_stream(
         '/ComputeService/areaOfRectangle',
         request_serializer=ComputeService__pb2.areaOfRectangleRequest.SerializeToString,
         response_deserializer=ComputeService__pb2.areaOfRectangleResponse.FromString,
@@ -25,14 +25,15 @@ class ComputeServiceServicer(object):
   # missing associated documentation comment in .proto file
   pass
 
-  def areaOfRectangle(self, request, context):
+  def areaOfRectangle(self, request_iterator, context):
     # missing associated documentation comment in .proto file
-    return ComputeService__pb2.areaOfRectangleResponse(z=request.x * request.y)
+    for request in request_iterator:
+        yield ComputeService__pb2.areaOfRectangleResponse(z=request.x * request.y)
 
 
 def add_ComputeServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
-      'areaOfRectangle': grpc.unary_unary_rpc_method_handler(
+      'areaOfRectangle': grpc.stream_stream_rpc_method_handler(
           servicer.areaOfRectangle,
           request_deserializer=ComputeService__pb2.areaOfRectangleRequest.FromString,
           response_serializer=ComputeService__pb2.areaOfRectangleResponse.SerializeToString,

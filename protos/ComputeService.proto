@@ -6,7 +6,7 @@ import "google/api/annotations.proto";
 
 
 service ComputeService{
-    rpc areaOfRectangle(areaOfRectangleRequest) returns (areaOfRectangleResponse){
+    rpc areaOfRectangle(stream areaOfRectangleRequest) returns (stream areaOfRectangleResponse){
     }
 }
 

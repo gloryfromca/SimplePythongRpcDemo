@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x14\x43omputeService.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1cgoogle/api/annotations.proto\".\n\x16\x61reaOfRectangleRequest\x12\t\n\x01x\x18\x01 \x01(\x05\x12\t\n\x01y\x18\x02 \x01(\x05\"$\n\x17\x61reaOfRectangleResponse\x12\t\n\x01z\x18\x01 \x01(\x05\x32X\n\x0e\x43omputeService\x12\x46\n\x0f\x61reaOfRectangle\x12\x17.areaOfRectangleRequest\x1a\x18.areaOfRectangleResponse\"\x00\x62\x06proto3')
+  serialized_pb=_b('\n\x14\x43omputeService.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1cgoogle/api/annotations.proto\".\n\x16\x61reaOfRectangleRequest\x12\t\n\x01x\x18\x01 \x01(\x05\x12\t\n\x01y\x18\x02 \x01(\x05\"$\n\x17\x61reaOfRectangleResponse\x12\t\n\x01z\x18\x01 \x01(\x05\x32\\\n\x0e\x43omputeService\x12J\n\x0f\x61reaOfRectangle\x12\x17.areaOfRectangleRequest\x1a\x18.areaOfRectangleResponse\"\x00(\x01\x30\x01\x62\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,])
 
@@ -125,7 +125,7 @@ _COMPUTESERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   serialized_start=202,
-  serialized_end=290,
+  serialized_end=294,
   methods=[
   _descriptor.MethodDescriptor(
     name='areaOfRectangle',

@@ -8,9 +8,18 @@ def run():
     port = "50051"
     channel = grpc.insecure_channel('{0}:{1}'.format(host, port))
     compute_service_stub = ComputeServiceStub(channel)
-    request = areaOfRectangleRequest(x=1, y=2)
-    response = compute_service_stub.areaOfRectangle(request)
-    assert response.z == 2
+
+    result = []
+    requests = []
+    for i in range(0, 10):
+        result.append(i * (i+1))
+        requests.append(areaOfRectangleRequest(x=i, y=i+1))
+
+    responses = compute_service_stub.areaOfRectangle(iter(requests))
+
+    for index, response in enumerate(responses):
+        assert response.z == result[index]
+    print("done")
 
 
 if __name__ == '__main__':
